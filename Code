@@ -1,0 +1,124 @@
+seeds = {100:"Kuber_seeds" , 101:"Paddy_seeds" , 102:"Sulphur" , 103:"Pottash" , 104:"Urea"}
+print(seeds)
+
+print("Available seeds")
+for seed_id , seed_name in seeds.items():
+    print(seed_id , "_" , seed_name)
+ 
+seed = input("Enter seed name to search : ")
+if seed in seeds.values():
+    print("Seed Available")
+else:
+    print("Seed not Available")
+    
+seed_id = int(input("Enter see ID : "))
+seed_name = input("Enter seed name : ")
+seeds[seed_id] = seed_name
+print(seeds)
+
+buy_id = int(input("Enter seed ID to buy : "))
+if buy_id in seeds:
+    print("Seed buy successfully")
+    print("Seed_name:" , seeds[buy_id])
+    del seeds[buy_id]
+else:
+    print("Seed not found")
+print("\n Remaining seeds")
+for seed_id , seed_name in seeds.items():
+    print(seed_id , "_" , seed_name)
+    
+sell_id = int(input("Enter seed ID to sell :"))
+if sell_id in seeds:
+    print("Seed sell successfully")
+    print("seed_name:" , seeds[sell_id])
+    del seeds[sell_id]
+else:
+    print("Seed not found")
+print("\n Remaining seeds")
+for seed_id , seed_name in seeds.items():
+    print(seed_id , "_" , seed_name)
+    
+return_id = int(input("\n Enter returned seed ID :"))
+return_name = input("Enter returned seed name :")
+seeds[return_id] = return_name 
+print("\n seed returns successfully!")
+print("\n Updated bhandar :")
+for seed_id , seed_name in seeds.items():
+   print(seed_id , "_" , seed_name)
+#price of cost seeds
+cost_price = {100:272,
+101:247,
+102:372,
+103:722,
+104:272}
+print(cost_price)
+#price of selling seeds
+selling_price = {100:300,101:300,102:400,103:800,104:300}
+print(selling_price)
+#profit per item
+profit = {100:28,
+101:53,
+102:28,
+103:78,
+104:28}
+print(profit)
+seed_name = input("Enter seed name : ")
+cost_price = int(input("Enter buying price : "))
+selling_price = int(input("Enter selling price : "))
+profit = selling_price - cost_price
+loss = cost_price - selling_price
+print("seed name:" , seed_name)
+if profit>0:
+    print("Profit:" , profit)
+else:
+    print("Loss:" , loss)
+    
+borrow_id = int(input("Enter seed ID to borrow : "))
+borrow_seed = input("enter seed name to borrow :")
+borrow_cost = int(input("enter borrow cost price : "))
+due_days = int(input("Pay within how many days :"))
+print("\n--------- LOAN RECORD ---------")
+print("Borrow Seed:" , borrow_seed)
+print("Borrow Cost:" , borrow_cost)
+print("Pay within:" , due_days , "days")
+
+customer_name = input("Enter customer name : ")
+borrow_selling = int(input("enter borrow price to sell : "))
+due_days = int(input("Pay within how many days : "))
+print("\n---------- BORROW RECORD ----------")
+print("Customer Name:" , customer_name)
+print("Borrow Selling:" , borrow_selling)
+print("Pay within:" , due_days , "days")
+passed_days = int(input("Pay after within how many days : "))
+interest_rate = 100
+if passed_days>due_days:
+    interest = borrow_selling*interest_rate/100
+    total_borrow_selling= borrow_selling+interest
+    print("\n Payment late!")
+    print("Interest:" , interest)
+    print("Borrow Selling:" , borrow_selling)
+else:
+    print("\n No Interest")
+    print("Borrow Selling to pay=" , borrow_selling)
+    
+customer = { "Ansh" : {"Mobile":7607939091 , "Village":"Saray Manodhar" , "Relation":"Friend"}       }
+print(customer)
+#Available stocks
+stocks = {100:20,
+101:40,
+102:23,
+103:32,
+104:45}
+print(stocks)
+for item, quantity in stocks.items():
+   if quantity<25:
+       print(item, ":Restock required")
+    
+sales = [ ]
+amount = int(input("Enter sale amount : "))
+sales.append(amount)
+print("Todays sales =" , sum(sales))
+#best selling product
+sales = {"Urea":20,"Kuber_seeds":26,"Sulphur":45}
+best = max(sales, key=sales.get)
+print("Best selling product=", best)
