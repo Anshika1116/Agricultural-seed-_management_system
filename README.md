@@ -1,5 +1,3 @@
-# Agricultural-seed-_management_system
-A simple Agricultural Seed Management System developed in Python for managing seed inventory, customer records, sales, and stock details. This project is based on my father's small seed business and helps keep records organized efficiently.
 🌱 Agricultural Seed Management System
 This is a Python-based console application inspired by my father's real seed business. It helps manage agricultural seeds, maintain stock records, customer information, and sales details. The project is designed to simplify daily business operations and improve record keeping.
 Features
